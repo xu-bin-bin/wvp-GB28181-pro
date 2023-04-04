@@ -1,6 +1,7 @@
 package com.genersoft.iot.vmp.service;
 
 import com.genersoft.iot.vmp.gb28181.bean.ParentPlatform;
+import com.genersoft.iot.vmp.gb28181.bean.SipTransactionInfo;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -26,10 +27,16 @@ public interface IPlatformService {
     boolean add(ParentPlatform parentPlatform);
 
     /**
+     * 添加级联平台
+     * @param parentPlatform 级联平台
+     */
+    boolean update(ParentPlatform parentPlatform);
+
+    /**
      * 平台上线
      * @param parentPlatform 平台信息
      */
-    void online(ParentPlatform parentPlatform);
+    void online(ParentPlatform parentPlatform, SipTransactionInfo sipTransactionInfo);
 
     /**
      * 平台离线
