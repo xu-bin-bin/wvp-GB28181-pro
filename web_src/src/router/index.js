@@ -6,11 +6,11 @@ import console from '../components/console.vue'
 import deviceList from '../components/DeviceList.vue'
 import channelList from '../components/channelList.vue'
 import gbRecordDetail from '../components/GBRecordDetail.vue'
-import pushVideoList from '../components/PushVideoList.vue'
+import streamPushList from '../components/StreamPushList.vue'
 import streamProxyList from '../components/StreamProxyList.vue'
 import map from '../components/map.vue'
 import login from '../components/Login.vue'
-import parentPlatformList from '../components/ParentPlatformList.vue'
+import platform from '../components/PlatformList.vue'
 import cloudRecord from '../components/CloudRecord.vue'
 import cloudRecordDetail from '../components/CloudRecordDetail.vue'
 import mediaServerManger from '../components/MediaServerManger.vue'
@@ -23,6 +23,8 @@ import userManager from '../components/UserManager.vue'
 import userApiKeyManager from '../components/UserApiKeyManager.vue'
 import wasmPlayer from '../components/common/jessibuca.vue'
 import rtcPlayer from '../components/dialog/rtcPlayer.vue'
+import region from '../components/region.vue'
+import group from '../components/group.vue'
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
@@ -54,8 +56,8 @@ export default new VueRouter({
           component: deviceList,
         },
         {
-          path: '/pushVideoList',
-          component: pushVideoList,
+          path: '/streamPushList',
+          component: streamPushList,
         },
         {
           path: '/streamProxyList',
@@ -72,9 +74,9 @@ export default new VueRouter({
           component: gbRecordDetail,
         },
         {
-          path: '/parentPlatformList/:count/:page',
-          name: 'parentPlatformList',
-          component: parentPlatformList,
+          path: '/platformList/:count/:page',
+          name: 'platformList',
+          component: platform,
         },
         {
           path: '/map/:deviceId/:parentChannelId/:count/:page',
@@ -130,6 +132,16 @@ export default new VueRouter({
           path: '/userApiKeyManager/:userId',
           name: 'userApiKeyManager',
           component: userApiKeyManager,
+        },
+        {
+          path: '/channel/region',
+          name: 'region',
+          component: region,
+        },
+        {
+          path: '/channel/group',
+          name: 'group',
+          component: group,
         }
         ,
         ]
